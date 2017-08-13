@@ -5,4 +5,4 @@
     - Spring initializr: https://start.spring.io/
     - Postman: API Testing
 - MySQL
-- Security: HTTPS, Token and OAuth
+- Security: HTTPS, Token and OAuth 2 (password flow)
