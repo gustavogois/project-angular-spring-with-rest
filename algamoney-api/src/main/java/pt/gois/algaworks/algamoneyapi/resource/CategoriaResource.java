@@ -1,10 +1,9 @@
 package pt.gois.algaworks.algamoneyapi.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pt.gois.algaworks.algamoneyapi.model.Categoria;
 import pt.gois.algaworks.algamoneyapi.repository.CategoriaRepository;
 
@@ -25,8 +24,6 @@ public class CategoriaResource {
 
         return categoriaRepository.findAll();
     }
-
-
 //    // Instructor suggests previous approach to returning an empty list
 //    @GetMapping
 //    public ResponseEntity<?> listar() {
@@ -39,5 +36,11 @@ public class CategoriaResource {
 //        // there isn´t nothing to show.
 //        return categorias.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(categorias);
 //    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void criar(@RequestBody Categoria categoria) {
+        Categoria categoriaSalva = categoriaRepository.save(categoria);
+    }
 
 }
