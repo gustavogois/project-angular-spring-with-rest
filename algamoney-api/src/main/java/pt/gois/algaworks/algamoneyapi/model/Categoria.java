@@ -2,6 +2,7 @@ package pt.gois.algaworks.algamoneyapi.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Created by Gustavo on 14/08/2017.
@@ -15,6 +16,7 @@ public class Categoria {
     private Long codigo;
 
     @NotNull
+    @Size(min = 3, max = 20)
     private String nome;
 
     public Long getCodigo() {
