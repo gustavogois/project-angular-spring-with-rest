@@ -9,6 +9,7 @@ import pt.gois.algaworks.algamoneyapi.model.Categoria;
 import pt.gois.algaworks.algamoneyapi.repository.CategoriaRepository;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class CategoriaResource {
     }
 
     @PostMapping
-    public ResponseEntity<Categoria> criar(@RequestBody Categoria categoria, HttpServletResponse response) {
+    public ResponseEntity<Categoria> criar(@Valid @RequestBody Categoria categoria, HttpServletResponse response) {
 
         Categoria categoriaSalva = categoriaRepository.save(categoria);
 
