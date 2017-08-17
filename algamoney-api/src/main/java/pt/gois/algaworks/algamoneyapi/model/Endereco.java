@@ -7,76 +7,76 @@ import javax.validation.constraints.Size;
 public class Endereco {
 
     @Size(max = 60)
-    private String endLogradouro;
+    private String logradouro;
     @Size(max = 5)
-    private String endNumero;
+    private String numero;
     @Size(max = 60)
-    private String endComplemento;
+    private String complemento;
     @Size(max = 30)
-    private String endBairro;
+    private String bairro;
     @Size(max = 9)
-    private String endCep;
+    private String cep;
     @Size(max = 30)
-    private String endCidade;
+    private String cidade;
     @Size(max = 30)
-    private String endEstado;
+    private String estado;
 
     public Endereco() {
     }
 
-    public String getEndLogradouro() {
-        return endLogradouro;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setEndLogradouro(String endLogradouro) {
-        this.endLogradouro = endLogradouro;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
-    public String getEndNumero() {
-        return endNumero;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setEndNumero(String endNumero) {
-        this.endNumero = endNumero;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    public String getEndComplemento() {
-        return endComplemento;
+    public String getComplemento() {
+        return complemento;
     }
 
-    public void setEndComplemento(String endComplemento) {
-        this.endComplemento = endComplemento;
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 
-    public String getEndBairro() {
-        return endBairro;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setEndBairro(String endBairro) {
-        this.endBairro = endBairro;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
-    public String getEndCep() {
-        return endCep;
+    public String getCep() {
+        return cep;
     }
 
-    public void setEndCep(String endCep) {
-        this.endCep = endCep;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
-    public String getEndCidade() {
-        return endCidade;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setEndCidade(String endCidade) {
-        this.endCidade = endCidade;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public String getEndEstado() {
-        return endEstado;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setEndEstado(String endEstado) {
-        this.endEstado = endEstado;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
