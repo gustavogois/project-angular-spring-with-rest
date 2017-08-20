@@ -11,6 +11,7 @@ import pt.gois.algaworks.algamoneyapi.event.RecursoCriadoEvent;
 import pt.gois.algaworks.algamoneyapi.exceptionhandler.AlgamoneyResponseEntityExceptionHandler;
 import pt.gois.algaworks.algamoneyapi.model.Lancamento;
 import pt.gois.algaworks.algamoneyapi.repository.LancamentoRepository;
+import pt.gois.algaworks.algamoneyapi.repository.filter.LancamentoFilter;
 import pt.gois.algaworks.algamoneyapi.service.LancamentoService;
 import pt.gois.algaworks.algamoneyapi.service.exception.PessoaInexistenteOuInativaException;
 
@@ -39,9 +40,9 @@ public class LancamentoResource {
     private MessageSource messageSource;
 
     @GetMapping
-    public List<Lancamento> listar() {
+    public List<Lancamento> pesquisar(LancamentoFilter lancamentoFilter) {
 
-        return lancamentoRepository.findAll();
+        return lancamentoRepository.filtrar(lancamentoFilter);
     }
 
     @PostMapping
