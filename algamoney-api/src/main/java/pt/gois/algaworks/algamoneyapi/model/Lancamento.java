@@ -1,6 +1,7 @@
 package pt.gois.algaworks.algamoneyapi.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -15,24 +16,30 @@ public class Lancamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
+    @NotNull
     private String descricao;
 
+    @NotNull
     @Column(name = "data_vencimento")
     private LocalDate dataVencimento;
     @Column(name = "data_pagamento")
     private LocalDate dataPagamento;
 
+    @NotNull
     private BigDecimal valor;
     private String observacao;
 
     @Enumerated(EnumType.STRING)
+    @NotNull
     private TipoLancamento tipo;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "codigo_categoria")
     private Categoria categoria;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "codigo_pessoa")
     private Pessoa pessoa;
 
