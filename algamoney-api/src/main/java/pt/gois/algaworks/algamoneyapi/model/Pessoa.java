@@ -1,5 +1,7 @@
 package pt.gois.algaworks.algamoneyapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -24,6 +26,13 @@ public class Pessoa {
 
     @NotNull
     private Boolean ativo = false;
+
+    // Para que o Jackson e Hibernate ignorem, e não tentem serializar e tals...
+    @JsonIgnore
+    @Transient
+    public boolean isInativo() {
+        return !getAtivo();
+    }
 
     public String getNome() {
         return nome;
